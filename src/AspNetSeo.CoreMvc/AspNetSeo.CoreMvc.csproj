@@ -1,0 +1,36 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFrameworks>netcoreapp3.0;netcoreapp2.0;</TargetFrameworks>
+    
+    <AssemblyName>AspNetSeo.CoreMvc</AssemblyName>
+    <AssemblyTitle>ASP.NET Core MVC SEO</AssemblyTitle>
+
+    <PackageId>AspNetSeo.CoreMvc</PackageId>
+    <Version>1.2.0</Version>
+
+    <PackageTags>AspNet Mvc AspNetMvc AspNetCore CoreMvc AspNetCoreMvc SEO</PackageTags>
+    <PackageLicenseUrl>https://github.com/sebnilsson/AspNetSeo/blob/master/LICENSE</PackageLicenseUrl>
+    <PackageProjectUrl>https://github.com/sebnilsson/AspNetSeo</PackageProjectUrl>
+
+    <Authors>Sebastian Nilsson</Authors>
+    <Description>Helpers for handling the SEO-data for ASP.NET Core MVC web-applications</Description>
+    <Summary>Helpers for handling the SEO-data for ASP.NET Core MVC web-applications</Summary>
+    
+    <RepositoryUrl>https://github.com/sebnilsson/AspNetSeo</RepositoryUrl>
+    <RepositoryType>git</RepositoryType>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\AspNetSeo\AspNetSeo.csproj" />
+  </ItemGroup>
+
+  <ItemGroup Condition="'$(TargetFramework)' == 'netcoreapp3.0'">
+    <FrameworkReference Include="Microsoft.AspNetCore.App" />
+  </ItemGroup>
+  <ItemGroup Condition="'$(TargetFramework)' == 'netcoreapp2.0'">
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Core" Version="2.0.0" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Razor" Version="2.0.0" />
+  </ItemGroup>
+
+</Project>
